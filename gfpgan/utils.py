@@ -98,6 +98,10 @@ class GFPGANer():
         self.gfpgan.eval()
         self.gfpgan = self.gfpgan.to(self.device)
 
+    def cleanup():
+        self.face_helper.clean_all()
+        torch.cuda.empty_cache()
+
     @torch.no_grad()
     def enhance(self, img, has_aligned=False, only_center_face=False, paste_back=True, weight=0.5):
         self.face_helper.clean_all()
