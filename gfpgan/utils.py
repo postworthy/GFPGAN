@@ -98,7 +98,7 @@ class GFPGANer():
         self.gfpgan.eval()
         self.gfpgan = self.gfpgan.to(self.device)
 
-    def cleanup():
+    def cleanup(self,):
         self.face_helper.clean_all()
         torch.cuda.empty_cache()
 
